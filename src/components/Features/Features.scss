@@ -1,0 +1,147 @@
+@import '../../scss/variables/variables.scss';
+@import '../../scss/mixin/mixinResponsive.scss';
+
+.features {
+    position: relative;
+    display: flex;
+    padding-bottom: 169px;
+    padding-left: 70px;
+    padding-right: 49px;
+
+    @include responsive(tablet) {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 105px;
+        padding-left: 40px;
+    }
+
+    @include responsive(mobile) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &__list {
+        position: relative;
+        list-style: none;
+        color: $white-color;
+    }
+
+    &__item {
+        position: absolute;
+        z-index: 10;
+        width: 698px;
+        height: 131px;
+        background: linear-gradient(270deg, rgba(115, 253, 170, 0.89) 0%, rgba(196, 196, 196, 0) 100%);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        padding-right: 39px;
+
+        &:first-child {
+            top: -50px;
+        }
+
+        &:nth-child(2) {
+            top: 170px;
+        }
+
+        &:last-child {
+            top: 390px;
+        }
+
+        @include responsive(tablet) {
+            position: relative;
+            max-width: 600px;
+            margin-top: 50px;
+            height: 100px;
+
+            &:first-child {
+                top: 0;
+            }
+    
+            &:nth-child(2) {
+                top: 0;
+            }
+    
+            &:last-child {
+                top: 0;
+            }
+        }
+    
+        @include responsive(mobile) {
+            margin-top: 33px;
+            max-width: 320px;
+            height: 70px;
+            padding-right: 20px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+
+        @include responsive(tablet) {
+            font-size: 24px;
+            line-height: 31px;
+            text-align: center;
+        }
+    
+        @include responsive(mobile) {
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+
+    &__desc {
+        max-width: 314px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        margin: 0 auto;
+        color: $primary-color;
+
+        @include responsive(tablet) {
+            font-size: 14px;
+        }
+    
+        @include responsive(mobile) {
+            font-size: 14px;
+            line-height: 17px;
+            max-width: 220px;
+        }
+    }
+
+    &__image {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 248px;
+            height: 248px;
+            left: 40px;
+            top: 0px;
+            background: rgba(115, 253, 170, 0.56);
+            filter: blur(80px);
+
+            @include responsive(tablet) {
+                content: none;
+            }
+        }
+
+
+        @include responsive(tablet) {
+            width: 80%;
+        }
+    
+        @include responsive(mobile) {
+            width: 250px;
+        }
+    }
+}
+

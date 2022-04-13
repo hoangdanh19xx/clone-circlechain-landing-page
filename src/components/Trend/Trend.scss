@@ -1,0 +1,52 @@
+@import '../../scss/variables/variables.scss';
+@import '../../scss/mixin/mixinResponsive.scss';
+
+.trend {
+    position: relative;
+    color: $white-color;
+    margin-bottom: 167px;
+    padding-left: 70px;
+    padding-right: 49px;
+
+    @include responsive(tablet) {
+        margin-bottom: 110px;
+        padding-left: 50px;
+    }
+
+    @include responsive(tablet) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &__heading {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 32px;
+        margin-bottom: 54px;
+
+        @include responsive(tablet) {
+            text-align: center;
+        }
+
+        @include responsive(mobile) {
+            font-size: 32px;
+            line-height: 24px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 54px 24px;
+
+        @include responsive(tablet) {
+            grid-template-columns: 1fr;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        @include responsive(mobile) {
+            max-width: 300px;
+        }
+    }
+}

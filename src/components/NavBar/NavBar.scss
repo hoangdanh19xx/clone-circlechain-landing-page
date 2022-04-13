@@ -1,0 +1,157 @@
+@import '../../scss/variables/variables.scss';
+@import '../../scss/mixin/mixinResponsive.scss';
+
+.nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 66px 49px 161px 70px;
+
+    @include responsive(tablet) {
+        padding-left: 50px;
+    }
+
+    @include responsive(mobile) {
+        padding: 40px 15px 60px;
+    }
+
+    &__toggle {
+        color: $white-color;
+        font-size: 48px;
+        display: none;
+        align-items: center;
+        cursor: pointer;
+
+        @include responsive(tablet) {
+            display: flex;
+        }
+
+        @include responsive(mobile) {
+            font-size: 36px;
+        }
+    }
+
+    &__logo {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 60px;
+            top: 10px;
+            width: 248px;
+            height: 248px;
+            background: rgba(115, 253, 170, 0.5);
+            filter: blur(80px);
+        }
+
+        @include responsive(mobile) {
+            width: 180px;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: auto;
+        margin-left: 78px;
+        list-style: none;
+        transition: all 0.3s linear;
+
+        &-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 5px;
+            color: $white-color;
+            font-size: 48px;
+            display: none;
+            align-items: center;
+            cursor: pointer;
+
+            @include responsive(tablet) {
+                display: flex;
+            }
+        }
+
+        @include responsive(tablet) {
+            position: fixed;
+            top: 80px;
+            right: 0;
+            background: rgba(1, 0, 16, 0.8);
+            box-shadow: 0 0 5px #ccc;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            width: 70%;
+            height: 400px;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s linear;
+        }
+
+        &.open{
+            opacity: 1 !important;
+            visibility: visible;
+        }
+
+        a {    
+            position: relative;
+            display: inline-block;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            margin-right: 55px;
+            text-decoration: none;
+            color: $white-color;
+        
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -15px;
+                display: inline-block;
+                text-align: center;
+                border-bottom: 5px solid $secondary-color;
+                width: 0%;
+                transition: all 0.3s linear;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+            @include responsive(tablet) {
+                margin-top: 50px;  
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+
+        @include responsive(tablet) {
+            display: none;
+        }
+       
+        a {
+            width: 38px;
+            height: 38px;
+            color: $white-color;
+            transition: all 0.3s linear;
+            
+            &:not(:last-child) {
+                margin-right: 27px;
+            }
+
+            &:hover {
+                background: $secondary-color;
+                border-radius: 10px;
+            }
+        }    
+    }
+}
+
