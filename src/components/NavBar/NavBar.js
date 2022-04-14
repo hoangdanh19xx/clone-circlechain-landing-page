@@ -24,9 +24,6 @@ const NavBar = () => {
         data-aos-duration="1000"
         data-aos-delay="200"
       >
-        <div className="nav__menu-close" onClick={() => setIsOpen(false)}>
-          <ion-icon name="close-outline"></ion-icon>
-        </div>
         <li>
           <a href="!#">How it work</a>
         </li>
@@ -60,13 +57,18 @@ const NavBar = () => {
         </a>
       </div>
 
-      <div
-        className="nav__toggle"
-        onClick={() => setIsOpen(true)}
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
-        <ion-icon name="menu-outline"></ion-icon>
+      <div className="nav__toggle" data-aos="fade-up" data-aos-duration="1000">
+        {isOpen ? (
+          <ion-icon
+            name="close-outline"
+            onClick={() => setIsOpen(false)}
+          ></ion-icon>
+        ) : (
+          <ion-icon
+            name="menu-outline"
+            onClick={() => setIsOpen(true)}
+          ></ion-icon>
+        )}
       </div>
     </nav>
   );
