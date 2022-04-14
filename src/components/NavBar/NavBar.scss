@@ -18,7 +18,7 @@
 
     &__toggle {
         position: absolute;
-        right: 0;
+        right: 30px;
         color: $white-color;
         font-size: 48px;
         display: none;
@@ -30,6 +30,7 @@
         }
 
         @include responsive(mobile) {
+            right: 15px;
             font-size: 36px;
         }
     }
